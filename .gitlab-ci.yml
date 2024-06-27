@@ -1,29 +1,31 @@
+image: node:14
+
 stages:
   - build
-  - test
   - deploy
 
-# Etapa de compilación
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install -g @angular/cli
+  - npm install
+
 build_job:
   stage: build
   script:
-    - echo "Compilando la aplicación..."
-    - npm install
-    - npm run build
+    - ng build --prod --output-path=dist/
+  artifacts:
+    paths:
+      - dist/
 
-# Etapa de pruebas
-test_job:
-  stage: test
-  script:
-    - echo "Ejecutando pruebas..."
-    - npm install
-    - npm test
-
-# Etapa de despliegue
-deploy_job:
+pages:
   stage: deploy
   script:
-    - echo "Desplegando la aplicación..."
-    - npm run deploy
+    - mv dist/* public/
+  artifacts:
+    paths:
+      - public
   only:
-    - main  # Solo ejecuta este trabajo en la rama 'main'
+    - main  # Cambia esto a la rama que uses para desplegar, si es diferente
