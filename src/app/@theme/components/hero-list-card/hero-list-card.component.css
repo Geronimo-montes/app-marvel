@@ -4,6 +4,7 @@
   justify-content: start;
 
   height: calc(100vh - 19rem);
+  width: fit-content;
   overflow-y: auto;
 }
 

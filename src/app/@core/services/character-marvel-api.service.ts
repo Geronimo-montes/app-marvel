@@ -9,17 +9,12 @@ import {
 } from '../data/character.model';
 import { Character } from '../models/character';
 import { FiltersParams } from '../models/marvel.model';
-import { NotificationService } from './notification.service';
 
 @Injectable()
 export class CharactersMarvelApiService extends CharacterModel {
   protected path = 'characters';
 
-  constructor(
-    protected readonly http: HttpClient,
-    // `private notificationService: NotificationService`
-    private notificationService: NotificationService
-  ) {
+  constructor(protected readonly http: HttpClient) {
     super();
   }
 
@@ -88,4 +83,3 @@ export class CharactersMarvelApiService extends CharacterModel {
     return throwError(error);
   }
 }
-``

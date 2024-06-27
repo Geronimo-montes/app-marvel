@@ -21,13 +21,12 @@ const DATA_SERVICES: any = [
 const INTERCEPTORES = [
   {
     provide: HTTP_INTERCEPTORS,
-    useClass: ErrorInterceptor,
+    useClass: MarvelApiKeyInterceptor,
     multi: true,
   },
-
   {
     provide: HTTP_INTERCEPTORS,
-    useClass: MarvelApiKeyInterceptor,
+    useClass: ErrorInterceptor,
     multi: true,
   },
 ];

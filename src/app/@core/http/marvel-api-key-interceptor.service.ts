@@ -25,8 +25,8 @@ export class MarvelApiKeyInterceptor implements HttpInterceptor {
     const authReq = req.clone({
       params: req.params
         .set('ts', ts)
-        .set('apiasdasdkey', this.publicApiKey)
-        .set('hasasdadash', hash),
+        .set('apikey', this.publicApiKey)
+        .set('hash', hash),
     });
 
     return next.handle(authReq);
