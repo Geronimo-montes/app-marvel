@@ -1,16 +1,29 @@
 stages:
-  - install
   - build
+  - test
+  - deploy
 
-# Definimos un trabajo para la etapa de build
-install_job:
-  stage: install
-  script:
-    - echo "isntall dependecias..."
-    - npm install
-# Definimos un trabajo para la etapa de build
+# Etapa de compilación
 build_job:
   stage: build
   script:
     - echo "Compilando la aplicación..."
+    - npm install
     - npm run build
+
+# Etapa de pruebas
+test_job:
+  stage: test
+  script:
+    - echo "Ejecutando pruebas..."
+    - npm install
+    - npm test
+
+# Etapa de despliegue
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Desplegando la aplicación..."
+    - npm run deploy
+  only:
+    - main  # Solo ejecuta este trabajo en la rama 'main'
