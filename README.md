@@ -58,38 +58,45 @@ _.Mensaje de confirmacion al documento de especificaciones, seguido de las tarea
 _.{X:'TASK-COMPLETE' O:'EN-PROCESO' -:'EN-ESPERA'}._
 
 - > Initial setup of Angular project with Angular CLI.
+
   - [x] Crear una nueva aplicación Angular utilizando Angular CLI.
   - [x] Configurar el entorno de desarrollo (instalación de dependencias necesarias).
 
 - > Integrate Marvel API: Add environment configuration and MarvelService for HTTP requests
+
   - [x] Crear una cuenta gratuita en el sitio de Marvel Developer para obtner las cuales (API Key y Secret Key).
   - [x] Configurar el servicio HttpClient para realizar solicitudes a la API de .
 
 - > Develop Home page: Create HomeComponent and display list of Marvel characters
-  - [x] Crear components: 
+
+  - [x] Crear components:
     - > `HomePageComponente`: Home page, display list of Marvel characters
-    - > `HeroListComponent`: Manager list, fecth, painate, ... Item<HeroCardComponent> 
+    - > `HeroListComponent`: Manager list, fecth, painate, ... Item<HeroCardComponent>
     - > `HeroCardComponent`: Card Hero, Img and name, descp.
   - [x] Crear servicio:
     - > `CharactersMarvelApiService`: Marxvel Api: Characters.
   - [x] <Route>('character:id') Añadir navegación al hacer clic en un personaje para redirigir al Detalle del personaje.
 
 - > Develop Character Detail page: Create CharacterDetailComponent and display character detailsE
-  - [ ] Crear un componentes:
+
+  - [x] Crear un componentes:
     - > `CharacterDetailPageComponent`: Para mostrar la información detallada del personaje y los comics.
     - > `CharacterDetailCardComponent`: para mostrar la información detallada del personaje.`
     - > `ComicsListComponent`: Listar comics.`
-  <!-- - [ ] (REPETIDO)Implementar el servicio para obtener los detalles del personaje seleccionado la API de Marvel. -->
-  - [ ] Mostrar la información del personaje (Nombre, Descripción, Imagen, Lista de ).
+    <!-- - [ ] (REPETIDO)Implementar el servicio para obtener los detalles del personaje seleccionado la API de Marvel. -->
+  - [x] Mostrar la información del personaje (Nombre, Descripción, Imagen, Lista de ).
 
 - > Design UI: Apply CSS and Bootstrap for a clean and responsive interface
-  - [ ] Utilizar CSS o Bootstrap para diseñar una interfaz limpia y atractiva.
-  - [ ] Asegurarse de que la aplicación sea responsive para dispositivos móviles y s.
+
+  - [x] Utilizar CSS o Bootstrap para diseñar una interfaz limpia y atractiva.
+  - [x] Asegurarse de que la aplicación sea responsive para dispositivos móviles y s.
 
 - > Impleme`nt error handling: Add error handling for HTTP requests in services and components
-  - [ ] Implementar manejo de errores en las solicitudes HTTP para mostrar mensajes adecuados si la API no responde correctamente.
+
+  - [x] Implementar manejo de errores en las solicitudes HTTP para mostrar mensajes adecuados si la API no responde correctamente.
 
 - > Con`figure Git and GiLab: Initialize repository, add remote, and push initial commit=
+
   - [ ] Configurar Git y GiLab para la gestión del código fuente.
   - [ ] Realizar commits para cada uno de los puntos del ejercicio.
   - [ ] Publicar el proyecto en un repositorio privado en GiLab.
