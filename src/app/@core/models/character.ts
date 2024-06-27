@@ -1,6 +1,13 @@
 import { ComicList } from './comic';
 import { EventList } from './event';
-import { FiltersParams, Image, Url } from './marvel.model';
+import {
+  FiltersParams,
+  Image,
+  ImageSize,
+  ImageSizeLandscape,
+  ImageSizeStandard,
+  Url,
+} from './marvel.model';
 import { SeriesList } from './series';
 import { StoryList } from './story';
 

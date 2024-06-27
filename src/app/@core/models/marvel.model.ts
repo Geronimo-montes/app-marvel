@@ -49,61 +49,61 @@ export interface FiltersParams {
 /**
  * Enumeration for image sizes in portrait format.
  */
-enum ImageSizePortrait {
+export enum ImageSizePortrait {
   /** 50x75px */
-  portrait_small,
+  portrait_small = 'portrait_small',
   /** 100x150px */
-  portrait_medium,
+  portrait_medium = 'portrait_medium',
   /** 150x225px */
-  portrait_xlarge,
+  portrait_xlarge = 'portrait_xlarge',
   /** 168x252px */
-  portrait_fantastic,
+  portrait_fantastic = 'portrait_fantastic',
   /** 300x450px */
-  portrait_uncanny,
+  portrait_uncanny = 'portrait_uncanny',
   /** 216x324px */
-  portrait_incredible,
+  portrait_incredible = 'portrait_incredible',
 }
 
 /**
  * Enumeration for image sizes in standard format.
  */
-enum ImageSizeStandard {
+export enum ImageSizeStandard {
   /** 65x45px */
-  standard_small,
+  standard_small = 'standard_small',
   /** 100x100px */
-  standard_medium,
+  standard_medium = 'standard_medium',
   /** 140x140px */
-  standard_large,
+  standard_large = 'standard_large',
   /** 200x200px */
-  standard_xlarge,
+  standard_xlarge = 'standard_xlarge',
   /** 250x250px */
-  standard_fantastic,
+  standard_fantastic = 'standard_fantastic',
   /** 180x180px */
-  standard_amazing,
+  standard_amazing = 'standard_amazing',
 }
 
 /**
  * Enumeration for image sizes in landscape format.
  */
-enum ImageSizeLandscape {
+export enum ImageSizeLandscape {
   /** 120x90px */
-  landscape_small,
+  landscape_small = 'landscape_small',
   /** 175x130px */
-  landscape_medium,
+  landscape_medium = 'landscape_medium',
   /** 190x140px */
-  landscape_large,
+  landscape_large = 'landscape_large',
   /** 270x200px */
-  landscape_xlarge,
+  landscape_xlarge = 'landscape_xlarge',
   /** 250x156px */
-  landscape_amazing,
+  landscape_amazing = 'landscape_amazing',
   /** 464x261px */
-  landscape_incredible,
+  landscape_incredible = 'landscape_incredible',
 }
 
 /**
  * Enumeration for full image sizes.
  */
-enum ImageSizeFull {
+export enum ImageSizeFull {
   /** Detail size */
   detail = 'detail',
   /** Full-size image */
@@ -118,3 +118,19 @@ export type ImageSize =
   | keyof typeof ImageSizeStandard
   | keyof typeof ImageSizeLandscape
   | keyof typeof ImageSizeFull;
+
+export function getImageSize(thumbnail: Image): string {
+  if (window.matchMedia('(max-width: 576px)').matches) {
+    return `${thumbnail.path}/${ImageSizeStandard.standard_small}.${thumbnail.extension}`;
+  } else if (window.matchMedia('(max-width: 768px)').matches) {
+    return `${thumbnail.path}/${ImageSizeStandard.standard_medium}.${thumbnail.extension}`;
+  } else if (window.matchMedia('(max-width: 992px)').matches) {
+    return `${thumbnail.path}/${ImageSizeStandard.standard_large}.${thumbnail.extension}`;
+  } else if (window.matchMedia('(max-width: 1200px)').matches) {
+    return `${thumbnail.path}/${ImageSizeStandard.standard_large}.${thumbnail.extension}`;
+  } else if (window.matchMedia('(max-width: 1400px)').matches) {
+    return `${thumbnail.path}/${ImageSizeStandard.standard_large}.${thumbnail.extension}`;
+  } else {
+    return `${thumbnail.path}/${ImageSizeFull.full}.${thumbnail.extension}`;
+  }
+}

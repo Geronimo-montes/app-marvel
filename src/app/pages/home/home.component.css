@@ -1,0 +1,18 @@
+h1 {
+  font: 800 26px / 1 RobotoCondensed, Trebuchet MS, Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.form-control-dark {
+  background-color: #343a40; /* Color de fondo del input */
+  color: #fff; /* Color del texto dentro del input */
+  border: none; /* Sin borde */
+}
+.form-control-dark:focus {
+  box-shadow: none; /* Quitar sombra al hacer focus */
+}
+.input-group-text {
+  background-color: transparent; /* Fondo del icono transparente */
+  border: none; /* Sin borde */
+  color: #fff; /* Color del icono */
+}

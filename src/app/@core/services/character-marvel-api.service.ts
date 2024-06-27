@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import {
   CharacterModel,
+  CharacterNameRealtedObj,
   ListObjet,
   ParamCharacterGetObj,
   ResponseApiMarvel,
@@ -59,15 +60,15 @@ export class CharactersMarvelApiService extends CharacterModel {
    *   console.log(response);
    * });
    */
-  public getCharacterObjById$({
-    idCharacter,
-    nameRelObj,
-    filters,
-  }: ParamCharacterGetObj): Observable<ListObjet> {
+  public getCharacterObjById$(
+    idCharacter: number,
+    nameRelObj: CharacterNameRealtedObj,
+    filters?: FiltersParams
+  ): Observable<ResponseApiMarvel> {
     const url: string = `${this.getURL(
       this.path
-    )}/${idCharacter}/${nameRelObj})}`;
-    const params = this.setParamsQrySummary(filters);
+    )}/${idCharacter}/${nameRelObj}`;
+    const params = this.setParamsQrySummary(filters || {});
 
     return this.http
       .get<any>(url, { params })

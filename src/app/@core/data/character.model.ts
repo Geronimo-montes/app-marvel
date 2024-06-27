@@ -1,11 +1,11 @@
 import { Observable } from 'rxjs';
 import { Character } from '../models/character';
 import { Comic } from '../models/comic';
-import { FiltersParams as FilterParams } from '../models/marvel.model';
 import { Series } from '../models/series';
 import { Story } from '../models/story';
 import { HttpServiceBase } from './http-base.model';
 import { HttpStatusCode } from '@angular/common/http';
+import { FiltersParams } from '../models/marvel.model';
 
 enum CharacterEndPoints {
   'comics',
@@ -24,7 +24,7 @@ export interface ParamCharacterGetObj {
   /** The name of the related object type (e.g., 'comics', 'events'). */
   nameRelObj: CharacterNameRealtedObj;
   /** Filters to apply to the query. */
-  filters: FilterParams;
+  filters: FiltersParams;
 }
 
 /**
@@ -76,7 +76,7 @@ export abstract class CharacterModel extends HttpServiceBase {
    * @returns {Observable<ResponseApiMarvel>} An observable containing the response from the API.
    */
   public abstract getCharacters$(
-    filters: FilterParams
+    filters: FiltersParams
   ): Observable<ResponseApiMarvel>;
 
   /**
@@ -92,6 +92,8 @@ export abstract class CharacterModel extends HttpServiceBase {
    * @returns {Observable<ListObjet>} An observable containing the list of related objects.
    */
   public abstract getCharacterObjById$(
-    params: ParamCharacterGetObj
-  ): Observable<ListObjet>;
+    idCharacter: number,
+    nameRelObj: CharacterNameRealtedObj,
+    filters?: FiltersParams
+  ): Observable<ResponseApiMarvel>;
 }

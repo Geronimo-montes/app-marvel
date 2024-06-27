@@ -22,8 +22,9 @@ export abstract class HttpServiceBase {
   protected setParamsQrySummary(dataContainer: FiltersParams): HttpParams {
     let params = new HttpParams();
 
+    if (!!dataContainer.name) params = params.set('name', dataContainer.name);
     if (!!dataContainer.nameStartsWith)
-      params = params.set('titleStartsWith', dataContainer.nameStartsWith);
+      params = params.set('nameStartsWith', dataContainer.nameStartsWith);
     if (!!dataContainer.orderBy)
       params = params.set('orderBy', dataContainer.orderBy.join(','));
     if (!!dataContainer.limit)
