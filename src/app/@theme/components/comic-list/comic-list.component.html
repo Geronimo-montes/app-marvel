@@ -1,0 +1,24 @@
+<div class="container position-relative">
+    <h3 class="text-center">Comics</h3>
+    <!-- Botones de navegación -->
+    <button class="btn btn-outline-primary position-absolute start-0 mx-2 top-50 translate-middle-y" (click)="prev()" (mouseenter)="prev()">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="btn btn-outline-primary position-absolute end-0 mx-2 top-50 translate-middle-y" (click)="next()" (mouseenter)="next()">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div class="row justify-content-center mt-3">
+        <!-- Imágenes -->
+        <div class="col-auto d-flex overflow-hidden py-4 px-4">
+            <div *ngFor="let item of displayedComics" class="comic-item position-relative m-1">
+                <img src="{{getImagePath(item.thumbnail)}}" alt="{{item.title}}" class="img-fluid">
+                <!-- <img src="{{item.thumbnail.path}}/portrait_small.{{item.thumbnail.extension}}" alt="{{item.title}}" class="img-fluid"> -->
+                <!-- <div class="comic-description position-absolute top-0 start-0 translate-middle">
+                    <p class="text-white">{{item.title}}</p>
+                    <p class="text-white">{{item.description}}</p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

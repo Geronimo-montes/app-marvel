@@ -131,6 +131,6 @@ export function getImageSize(thumbnail: Image): string {
   } else if (window.matchMedia('(max-width: 1400px)').matches) {
     return `${thumbnail.path}/${ImageSizeStandard.standard_large}.${thumbnail.extension}`;
   } else {
-    return `${thumbnail.path}/${ImageSizeFull.full}.${thumbnail.extension}`;
+    return `${thumbnail.path}.${thumbnail.extension}`;
   }
 }

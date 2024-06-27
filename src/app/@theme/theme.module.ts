@@ -1,7 +1,9 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  ComicListComponent,
   HeroCardComponent,
+  HeroDetailComponent,
   HeroListCardComponent,
   PaginationComponent,
 } from './components';
@@ -10,7 +12,9 @@ import { RouterModule } from '@angular/router';
 
 const COMPONENTS: any[] = [
   HeroCardComponent,
+  HeroDetailComponent,
   PaginationComponent,
+  ComicListComponent,
   HeroListCardComponent,
 ];
 

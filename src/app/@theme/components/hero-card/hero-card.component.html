@@ -1,4 +1,4 @@
-<div class="card overflow-hidden shadow">
+<div class="card overflow-hidden shadow" (click)="navigateDetaild(character)">
   <img src="{{ getImagePath(character.thumbnail) }}" alt="{{ character.name }}" class="card-img-top">
   <div class="card-body bg-black text-white position-relative h-auto">
     <h5 class="card-title">{{ character.name }}</h5>

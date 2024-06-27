@@ -7,6 +7,12 @@
 </nav>
 
 <!-- Contenido de la página -->
-<div class="container border mt-2 bg-dark rounded " style="--bs-bg-opacity: .9;">
+<div class="container border mt-2 bg-dark rounded" style="--bs-bg-opacity: .9;">
   <router-outlet></router-outlet>
 </div>
+
+<footer class="bg-dark text-white text-center mt-2 p-2 fixed-bottom">
+  <div class="container-fluid">
+    <p [innerHTML]="getFooterText()"></p>
+  </div>
+</footer>

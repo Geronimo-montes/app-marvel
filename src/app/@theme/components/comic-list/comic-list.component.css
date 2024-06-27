@@ -1,0 +1,38 @@
+.comic-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+  width: 100px; /* Ancho deseado */
+  height: 180px; /* Alto deseado */
+  margin-right: -50px; /* Solapamiento entre imágenes */
+}
+
+.comic-item img {
+  width: 100%;
+  height: auto;
+}
+
+.comic-item:hover {
+  z-index: 1;
+  transform: scale(1.2);
+}
+
+/* .comic-description {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.comic-item:hover .comic-description {
+  opacity: 1;
+} */
+
+.overflow-hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  transition: transform 0.3s ease-out;
+}
