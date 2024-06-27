@@ -1,21 +1,31 @@
-# Add Node version use in your project. Recommender use LTS last version.
-# (1)
 image: node:18
-# (2)
-pages:
-  cache:
-    paths:
-      - node_modules/
-  # (3)
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install -g @angular/cli
+  - npm ci
+
+build:
+  stage: build
   script:
-    # Use Angular version 13 because use in current project
-    - npm install -g @angular/cli@18
-    - npm install
-    - npm run prod
-  # (4) especify path in directory to take content to publish angular app
+    - ng build --configuration=production
   artifacts:
     paths:
-      - public
-  # (5) Detect changes in select branches
+      - public/
+
+deploy:
+  stage: deploy
+  script:
+    - apt-get update -qy
+    - apt-get install -y lftp
+    - lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R public/ /path/to/deployment"
   only:
     - main
+
