@@ -8,13 +8,12 @@ import {
 import { Subject, takeUntil } from 'rxjs';
 import { CharacterModel } from '../../../@core/data/character.model';
 import { Character } from '../../../@core/models/character';
-import { Image, ImageSizeFull } from '../../../@core/models/marvel.model';
-import { LoadingService } from '../loading/loading.service';
+import { Image } from '../../../@core/models/marvel.model';
 import { LoadingComponent } from '../loading/loading.component';
+import { LoadingService } from '../loading/loading.service';
 
 @Component({
   selector: 'app-hero-detail',
-
   templateUrl: './hero-detail.component.html',
   styleUrl: './hero-detail.component.css',
 })

@@ -5,6 +5,7 @@ import {
   HeroCardComponent,
   HeroDetailComponent,
   HeroListCardComponent,
+  NotificationComponent,
   PaginationComponent,
 } from './components';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,6 +17,7 @@ const COMPONENTS: any[] = [
   PaginationComponent,
   ComicListComponent,
   HeroListCardComponent,
+  NotificationComponent,
 ];
 
 const MODULES: any[] = [ReactiveFormsModule, FormsModule, RouterModule];

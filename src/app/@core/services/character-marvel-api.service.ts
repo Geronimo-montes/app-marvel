@@ -1,22 +1,25 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ErrorHandler, Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import {
   CharacterModel,
   CharacterNameRealtedObj,
-  ListObjet,
-  ParamCharacterGetObj,
   ResponseApiMarvel,
 } from '../data/character.model';
 import { Character } from '../models/character';
 import { FiltersParams } from '../models/marvel.model';
+import { NotificationService } from './notification.service';
 
 @Injectable()
 export class CharactersMarvelApiService extends CharacterModel {
   protected path = 'characters';
 
-  constructor(protected readonly http: HttpClient) {
+  constructor(
+    protected readonly http: HttpClient,
+    // `private notificationService: NotificationService`
+    private notificationService: NotificationService
+  ) {
     super();
   }
 
@@ -81,7 +84,8 @@ export class CharactersMarvelApiService extends CharacterModel {
    * @returns {Observable<never>} An observable throwing the error.
    */
   private handleError(error: any) {
-    console.error('An error occurred:', error);
+    console.log({ error });
     return throwError(error);
   }
 }
+``

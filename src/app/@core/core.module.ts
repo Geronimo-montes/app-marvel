@@ -7,9 +7,10 @@ import {
   SkipSelf,
 } from '@angular/core';
 import { CharacterModel } from './data/character.model';
-import { MarvelApiKeyInterceptor } from './http/marvel-api-key.interceptor';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { CharactersMarvelApiService } from './services/character-marvel-api.service';
+import { MarvelApiKeyInterceptor } from './http/marvel-api-key-interceptor.service';
+import { ErrorInterceptor } from './http/error-interceptor.service';
 
 const GUARDS: any[] = [];
 
@@ -18,6 +19,12 @@ const DATA_SERVICES: any = [
 ];
 
 const INTERCEPTORES = [
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ErrorInterceptor,
+    multi: true,
+  },
+
   {
     provide: HTTP_INTERCEPTORS,
     useClass: MarvelApiKeyInterceptor,
