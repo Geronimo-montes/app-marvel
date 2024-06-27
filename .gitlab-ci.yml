@@ -25,7 +25,7 @@ deploy:
   script:
     - apt-get update -qy
     - apt-get install -y lftp
-    - lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R public/ /path/to/deployment"
+    - lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R public/ /app-marvel/public_html/"
   only:
     - main
 
