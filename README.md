@@ -91,16 +91,16 @@ _.{X:'TASK-COMPLETE' O:'EN-PROCESO' -:'EN-ESPERA'}._
   - [x] Utilizar CSS o Bootstrap para diseñar una interfaz limpia y atractiva.
   - [x] Asegurarse de que la aplicación sea responsive para dispositivos móviles y s.
 
-- > Impleme`nt error handling: Add error handling for HTTP requests in services and components
+- > Implement error handling: Add error handling for HTTP requests in services and components
 
   - [x] Implementar manejo de errores en las solicitudes HTTP para mostrar mensajes adecuados si la API no responde correctamente.
 
 - > Con`figure Git and GiLab: Initialize repository, add remote, and push initial commit=
 
-  - [ ] Configurar Git y GiLab para la gestión del código fuente.
-  - [ ] Realizar commits para cada uno de los puntos del ejercicio.
-  - [ ] Publicar el proyecto en un repositorio privado en GiLab.
-  - [ ] Conceder acceso al usuario @devops-solemti.
+  - [x] Configurar Git y GiLab para la gestión del código fuente.
+  - [x] Realizar commits para cada uno de los puntos del ejercicio.
+  - [x] Publicar el proyecto en un repositorio privado en GiLab.
+  - [x] Conceder acceso al usuario @devops-solemti.
 
 - > Deploy application: Build for production and deploy to hosting servic
   - [ ] Montar la aplicación en un servidor de prueba gratuito (como GitHub Pages, y, Vercel, etc.).
