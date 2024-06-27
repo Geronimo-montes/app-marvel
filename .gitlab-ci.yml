@@ -1,4 +1,4 @@
-image: node:18.19
+image: node:18
 
 stages:
   - build
@@ -15,7 +15,7 @@ before_script:
 build_job:
   stage: build
   script:
-    - ng build --prod --output-path=dist/
+    - ng build --configuration production --output-path=dist/
   artifacts:
     paths:
       - dist/
@@ -28,4 +28,4 @@ pages:
     paths:
       - public
   only:
-    - main  # Cambia esto a la rama que uses para desplegar, si es diferente
+    - main # Cambia esto a la rama que uses para desplegar, si es diferente
