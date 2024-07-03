@@ -18,14 +18,7 @@
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              { "glob": "**/*", "input": "src/assets/", "output": "/public/" },
-              {
-                "glob": "favicon.ico",
-                "input": "src/assets/",
-                "output": "/public/"
-              }
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
@@ -38,6 +31,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -80,14 +79,7 @@
           "options": {
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              { "glob": "**/*", "input": "src/assets/", "output": "/public/" },
-              {
-                "glob": "favicon.ico",
-                "input": "src/assets/",
-                "output": "/public/"
-              }
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css"
