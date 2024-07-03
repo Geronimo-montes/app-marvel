@@ -1,4 +1,4 @@
-image: node:18
+image: node:18.19
 
 stages:
   - build
@@ -10,21 +10,23 @@ cache:
 
 before_script:
   - npm install -g @angular/cli
-  - npm ci
+  - npm install
 
-build:
+build_job:
   stage: build
   script:
-    - ng build --configuration=production
+    - ng build --configuration=production --output-path=dist/
   artifacts:
     paths:
-      - public/
+      - dist/
 
-deploy:
+# Sección pages original
+pages:
   stage: deploy
   script:
-    - apt-get update -qy
-    - apt-get install -y lftp
-    - lftp -c "set ftp:passive-mode on; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R public/ /app-marvel/public_html/"
+    - mv dist/* public/
+  artifacts:
+    paths:
+      - public
   only:
-    - main
+    - main  # Cambia esto a la rama que uses para desplegar, si es diferente

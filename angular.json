@@ -13,16 +13,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "allowedCommonJsDependencies": ["lodash"],
-            "outputPath": "public",
+            "outputPath": "dist/app-marvel",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/public/" },
               {
-                "glob": "**/*",
-                "input": "public"
+                "glob": "favicon.ico",
+                "input": "src/assets/",
+                "output": "/public/"
               }
             ],
             "styles": [
@@ -49,21 +50,12 @@
                   "maximumError": "4kB"
                 }
               ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -88,16 +80,19 @@
           "options": {
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/public/" },
+              {
+                "glob": "favicon.ico",
+                "input": "src/assets/",
+                "output": "/public/"
+              }
+            ],
             "styles": [
               "src/styles.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           }
         }
       }
