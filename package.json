@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "prod": "ng build --base-href=/app-marvel/"
+    "prod": "ng build --base-href=/app-marvel/",
+    "deploy": "ng build --prod --base-href=https://Geronimo-montes.github.io/app-marvel/ && npx angular-cli-ghpages --dir=dist/app-marvel"
   },
   "private": true,
   "dependencies": {
