@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((query) => {
         this.qryCharacter.nameStartsWith = query;
-        this.paginate.currentPage = 1;
+        this.qryCharacter.offset = 0;
+        this.paginate = { currentPage: 1, countPage: 1 };
         this.getCharacters();
       });
   }
