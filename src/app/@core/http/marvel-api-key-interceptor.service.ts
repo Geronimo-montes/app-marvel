@@ -5,7 +5,7 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import CryptoJS from 'crypto-js';
+import * as CryptoJS from 'crypto-js';
 
 @Injectable()
 export class MarvelApiKeyInterceptor implements HttpInterceptor {

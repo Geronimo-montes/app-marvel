@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": ["crypto-js"],
             "outputPath": "dist/app-marvel",
             "index": "src/index.html",
             "browser": "src/main.ts",
