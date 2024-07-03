@@ -8,7 +8,7 @@ import { Character } from '../../@core/models/character';
 import { FiltersParams } from '../../@core/models/marvel.model';
 import { LoadingComponent } from '../../@theme/components/loading/loading.component';
 import { LoadingService } from '../../@theme/components/loading/loading.service';
-import { SearchService } from '../../@core/services/seach.service';
+import { SearchService } from '../../@theme/components/search-module/search.service';
 
 @Component({
   selector: 'app-home',

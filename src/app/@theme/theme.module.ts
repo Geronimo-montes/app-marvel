@@ -10,6 +10,7 @@ import {
 } from './components';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SearchModule } from './components/search-module/search.module';
 
 const COMPONENTS: any[] = [
   HeroCardComponent,
@@ -22,13 +23,21 @@ const COMPONENTS: any[] = [
 
 const MODULES: any[] = [ReactiveFormsModule, FormsModule, RouterModule];
 
+const EXPORTS_MODULES: any[] = [SearchModule];
+
 const PIPES: any[] = [];
 
 const DIRECTIVES: any[] = [];
 
 @NgModule({
-  imports: [CommonModule, ...MODULES],
-  exports: [CommonModule, ...PIPES, ...COMPONENTS, ...DIRECTIVES],
+  imports: [CommonModule, ...MODULES, ...EXPORTS_MODULES],
+  exports: [
+    CommonModule,
+    ...PIPES,
+    ...COMPONENTS,
+    ...DIRECTIVES,
+    ...EXPORTS_MODULES,
+  ],
   declarations: [...COMPONENTS, ...PIPES, ...DIRECTIVES],
 })
 export class ThemeModule {
